@@ -351,9 +351,11 @@ class RestPkiClient
             }
             $this->checkResponse($verb, $url, $httpResponse);
 
-        } finally {
-            fclose($handle);
+        } catch (\Exception $e) {
+            
         }
+        
+        fclose($handle);
     }
 
     /**
